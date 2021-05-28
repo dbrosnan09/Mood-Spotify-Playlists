@@ -2,7 +2,7 @@
 *.pyc
 *~
 __pycache__
-settings.py
+
 
 # Env
 .env
