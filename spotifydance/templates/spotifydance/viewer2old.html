@@ -1,0 +1,2817 @@
+<html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<head>
+<style>
+
+
+.grid {
+    display:grid;
+    grid-template-rows:607px;
+}
+
+.column_grid {
+    display:grid;
+    grid-template-rows:800px;
+}
+
+.view_flex {
+    display:flex;
+
+}
+
+.album {
+    height:160px;
+    margin:30px;
+    border-radius:4px;
+}
+
+.thumb:hover {
+    transform:scale(1.1);
+    transition:.5s;
+    animation-timing-function:linear;
+    z-index:1000;
+}
+
+.view_frame {
+    width:100%;
+    overflow-x:scroll;
+    margin:auto;
+   overflow-y:hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+height:400px;
+}
+
+
+
+.view_frame::-webkit-scrollbar {
+background-color: transparent;
+width:3px;
+height:10px;
+
+}
+
+.view_frame::-webkit-scrollbar-thumb {
+    background-color: #ffffff54;
+}
+
+
+
+.happy_bg{
+/*background: linear-gradient(to right, #ece76a 0%, #ff8ab3 100%);  */
+  /*  background: linear-gradient(to right, #ece76a -16%, #ff8ab3 144%);*/
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+/*
+background-color: #f9c1b1;
+background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);*/
+max-width:1fr;
+width:100%; 
+height:607px;
+}
+
+.modal_happy_bg{
+
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+
+}
+
+body {
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+margin:0px;
+
+
+}
+
+.whole_page {
+    width:1fr;
+   margin:0px;
+    font-family:'Montserrat';
+ 
+    transition:1s;
+}
+
+.whole_page {
+   
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+.whole_page_fade {
+
+    -webkit-animation: fadeout 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 1s; /* Firefox < 16 */
+        -ms-animation: fadeout 1s; /* Internet Explorer */
+         -o-animation: fadeout 1s; /* Opera < 12.1 */
+            animation: fadeout 1s;
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+
+
+.frame_wrapper {
+    width:100%;
+    margin:auto;
+    max-width:1000px;
+}
+
+.song_name {
+width:120px;
+margin:auto;
+font-family:'Oswald';
+font-size:23px;
+color:white;
+}
+
+.album_name {
+width:120px;
+margin:auto;
+font-size:14px;
+font-weight:300;
+}
+
+.header {
+    font-size:42px;
+    margin-right:20px;
+
+}
+
+.header_flex {
+  display:flex;
+}
+.play_title {
+    font-size:57px;
+    color:white;
+    padding-left:30px;
+    font-weight:bold;
+font-family:'Montserrat';
+}
+
+.top_grid {
+    display:flex;
+    justify-content:space-between;
+    padding-right:30px;
+    padding-left:30px;
+    align-items:center;
+}
+
+.top_pic {
+    padding-top:8px;
+    padding-bottom:8px;
+    height:60px;
+    border-radius:50%;
+}
+
+.top_pic:hover {
+
+        transform:scale(1.1);
+    transition:.5s;
+}
+
+
+.header {
+}
+
+.artist {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.header_artist {
+      
+    font-size: 19px;
+}
+
+.dark_bg {
+
+      background: linear-gradient(
+315deg
+, #f5da33 -6%, #FF8A99 19%, #010057 144%);
+
+   
+}
+
+.dark {
+    color:white;
+}
+
+.light {
+    color: white;
+}
+
+.top_container {
+    position:fixed;
+    background:white;
+    width:100%;
+    z-index:9999;
+
+}
+
+.top_container_guide {
+    position:fixed;
+    background:white;
+    width:100%;
+    z-index:9999;
+    top:40px;
+    top: 76px;
+    height: 32px;
+}
+
+.spacer {
+    width:100%;
+    height:76px;
+}
+
+.manic_bg {
+    background-color: #feae96;
+    background-image: linear-gradient(
+315deg
+, #f7d239 0%, #fe0944 74%);
+}
+
+.manic {
+  color:white;
+}
+
+
+.ht_bg {
+  background-color: #f5df2e;
+background-image: linear-gradient(-27deg, #f5df2e 0%, #ff2e7a 74%);
+}
+
+.ht {
+  color:white;
+}
+
+.lt_bg {
+background-color: #007ea7;
+    background-image: linear-gradient( 
+330deg
+ , #f5df2e 0%,#007ea7 69%);
+}
+
+.lt {
+  color:white;
+}
+
+.popular_bg {
+background-color: #d99058;
+    background-image: linear-gradient( 
+327deg
+ , #f2dd31 4%, #FF8D41 47%);
+}
+
+.popular {
+  color:white;
+}
+
+.chill_bg {
+background-color: #e4eee9;
+    background-image: linear-gradient( 
+142deg
+ , #93a5ce 25%, #E1DB8F 104%);
+}
+
+.chill {
+  color:white;
+}
+
+.dance_bg {
+background-color: #7f5a83;
+background-image: linear-gradient(
+269deg
+, #ff0909 0%, #0d324d 79%);
+
+}
+
+.dance {
+  color:white;
+}
+
+.acoustic_bg {
+    background-image: linear-gradient( 
+334deg
+ , #FFDE42 0%, #fe603c 94%);
+
+}
+
+.loud_bg {
+background-color: #990000;
+    background-image: linear-gradient(
+147deg
+, #FF0146 38%, #d5fd75 109%);
+
+}
+
+.quiet_bg {
+  background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+}
+
+.guide_flex {
+  display:flex;
+  font-size:15px;
+  justify-content:space-evenly;
+}
+
+.loud_guide {
+color: linear-gradient(
+147deg
+, #FF0146 38%, #d5fd75 109%);
+}
+
+.loud_guide:hover {
+  border-bottom:2px solid black;
+
+}
+
+
+.img_container {
+  position: relative;
+  width: 50%;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 30px;
+    right: 0;
+    height: 160px;
+    width: 160px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #9e9e9eb3;
+    border-radius: 4px;
+}
+
+.img_container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.sub_flex {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  padding-top:42px;
+  padding-bottom:48px;
+
+}
+
+.playlist_button {
+border: 1px solid #ffffffc7;
+    border-radius: 63px;
+    color: #ffffffc7;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 37px;
+    background: transparent;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    
+}
+.sub_spacer {
+  width:44px;
+}
+
+
+.playlist_button:hover {
+  color:white;
+  background-color:#1DB954;
+  border: 1px solid #1DB954;
+  transition:.5s;
+}
+
+.auth_frame {
+  position:absolute;
+  height:400px;
+  width:400px;
+}
+
+#search_viewer {
+  font-family:'Montserrat';
+  margin-block-end:0;
+  font-size:15px;
+  min-width:360px;
+}
+
+.search_box {
+    position: relative;
+   
+    height: 44px;
+    width: 304px;
+  
+    border: 1px solid white;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: 'Montserrat';
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid gray;
+}
+.search_button {
+position: relative;
+    height: 44px;
+    width: 50;
+    border: 1px solid white;
+    background: white;
+    color: gray;
+    font-family: 'Montserrat';
+    font-size: 20px;
+
+    border: 1px solid gray;
+    margin-left: 0px;
+    right: 5px;
+}
+
+.search_box:focus {
+    outline:none;
+}
+
+.search_button:hover {
+    background: #46a4d2;
+    color: white;
+    border-color: linear-gradient( -27deg , #f5df2e 0%, #ff2e7a 74%);
+    transition: .3s;
+}
+
+
+
+
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+opacity:0;
+visibility:hidden;
+}
+
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 45%;
+    width: 200px;
+    height: 200px;
+    margin: -75px 0 0 -135px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: white;
+
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite; 
+    background:transparent;
+}
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: white;
+
+        -webkit-animation: spin 3s linear infinite; 
+        animation: spin 3s linear infinite; 
+    }
+
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: white;
+
+        -webkit-animation: spin 1.5s linear infinite; 
+          animation: spin 1.5s linear infinite; 
+    }
+
+    @-webkit-keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  
+            -ms-transform: rotate(0deg);  
+            transform: rotate(0deg);  
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  
+            -ms-transform: rotate(360deg);  
+            transform: rotate(360deg);  
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  
+            -ms-transform: rotate(0deg);  
+            transform: rotate(0deg);  
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  
+            -ms-transform: rotate(360deg); 
+            transform: rotate(360deg);  
+        }
+    }
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+}
+ 
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+ 
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+#loader {
+    z-index: 1001; 
+}
+
+
+
+
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  
+    -ms-transform: translateX(-100%); 
+    transform: translateX(-100%);  
+}
+ 
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  
+    -ms-transform: translateX(100%);  
+    transform: translateX(100%);  
+}
+.loaded #loader {
+    opacity: 0;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s ease-out;
+            transition: all 0.3s 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.modal_bg {
+
+
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+}
+
+
+.modal_text {
+  font-family:'Montserrat';
+  color:white;
+}
+
+.spotify_color {
+background:#1DB954;
+  border-color:#1DB954!important;
+  border: 1px solid #1DB954;
+  border-radius:63px;
+  height:40px;
+  padding-right:10px;
+  padding-left:10px;
+  line-height:37px;
+ 
+  font-size:16px;
+  width:120px;
+
+}
+
+.spotify_color:hover {
+  background:#20DB62;
+  transition:.5s;
+  border-color:#20DB62!important;
+
+
+
+}
+
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #20DB62;
+    border-color: #20DB62;
+    box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
+        box-shadow: none;
+}
+
+.big_modal {
+  font-size:30px;
+  font-weight:700;
+}
+
+.small_modal {
+  font-size:20px;
+}
+
+.modal_x {
+  color:white;
+  background-color:transparent;
+  border:none;
+  font-size:40px;
+  margin-top:-20px;
+
+  
+}
+
+.modal_top_flex {
+  display:flex;
+  justify-content:space-between;
+}
+
+.modal-footer {
+  border-top-color:transparent;
+}
+.modal_spacer {
+  width:5px;
+}
+
+.modal_bottom_flex {
+  display:flex;
+    justify-content:space-between;
+padding-right:20px;
+padding-bottom:19px;
+    padding-bottom: 23px;
+    padding-top: 18px;
+}
+}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
+            box-shadow: none;
+
+}
+
+.user_box {
+  position:absolute;
+  right:0;
+  top:0;
+  left:0;
+  background:white;
+  color:black;
+
+}
+
+#search_viewer {
+  min-width:386px;
+}
+
+#user_name {
+  color:#808080a6;
+}
+
+.flex_artist {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.rj_flex {
+  display:flex;
+  align-items:center;
+}
+
+#user_name_top {
+  background:transparent;
+  border:none;
+}
+
+#user_name_top:hover {
+  text-decoration:underline;
+  color:#808080a6;
+}
+
+.modal_un_bg {
+  background:white;
+}
+
+.un {
+  color:white;
+}
+
+.un_modal {
+  width:300px;
+}
+
+.larger_modal {
+  font-size:32px;
+}
+
+#add_button {
+  border-left: none;
+    width: 44px;
+}
+
+#add_button:hover {
+  background:#5a23da;
+  transition:.3s;
+}
+.search_bar {
+  display:flex;
+  max-width:435px;
+  margin-right:20px;
+}
+</style>
+
+</head>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<script>
+var loud = [];
+var quiet = [];
+var high_tempo = [];
+var low_tempo = [];
+var popular = [];
+var manic = [];
+var chill = [];
+var light = [];
+var dark = [];
+var dance = [];
+var acoustic = [];
+
+
+</script>
+<script>
+  var current_url = window.location.href;
+  var access_token = current_url.includes("access_token")
+
+if (access_token) {
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  var a_t = current_url.slice(at_start,at_end);
+
+  $.ajax({
+
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+  success: function(response) {
+      var current_user = response.id
+      $('#user_name').text(current_user)
+      $('#modal_un').text(current_user)
+            console.log("loaded")
+
+  },
+  })
+
+} else {
+  var current_user = 'log in'
+  $('#user_name').text(current_user)
+
+}
+
+</script>
+<body>
+
+
+<div class='whole_page'>
+<div class='top_container'><div class='top_grid'><div class='header'>mood</div><div class='search_bar'><form id='search_viewer' method='get'>
+  <input id='search_box' class='search_box' type="text" placeholder='Search Artist' autocomplete='off' name="search_artist">
+    <input id='search_button' class='search_button' type='submit' action='/viewer' value='go'>
+    </form><input id='add_button' class='search_button' type='submit' value='+'></div><div class='rj_flex'><div class='flex_artist'><div id='artist1' class='header_artist'>{{artist_name_site}}</div><button id='user_name_top'><div id='user_name'></div></button></div><img class='top_pic' src={{artist_picture}}></div></div></div>
+<!--<div class='top_container_guide'><div class='guide_flex'><div class='loud_guide'>Loud</div><div class='loud_guide'>Quiet</div><div class='loud_guide'>High Tempo</div><div class='loud_guide'>Low Tempo</div><div class='loud_guide'>Popular</div><div class='loud_guide'>Dark</div><div class='loud_guide'>Light</div><div class='loud_guide'>Manic</div><div class='loud_guide'>Chill</div><div class='loud_guide'>Dance</div><div class='loud_guide'>Acoustic</div></div></div>-->
+<div class='spacer'></div>
+</div>
+
+<script>
+$('#user_name_top').click( function(){
+  
+  console.log('clicked!')
+  $('#login_modal').modal('show')
+  var cu = $('#user_name').text()
+        $('#modal_un').text(cu)
+  
+});
+</script>
+
+<script>
+$('#add_button').submit(function(){
+
+
+event.preventDefault();
+var search_2 = $('#search_box').val();
+var search_1 = $('#artist1').text()
+
+if (search_2.length == 0) {
+
+
+}else {
+
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/land2/&scope=playlist-modify-public&response_type=token&state=" + search_1 +'search_divider' + search_2;
+
+}
+
+}
+
+)
+</script>
+<div class='grid'>
+
+<div class='happy_bg loud_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Loud</div><div class='sub_spacer'></div><button id='loud_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in loud_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+
+
+<p class='song_name color'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+<script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+
+<script>
+loud.push("{{uri}}")
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class='happy_bg quiet_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Quiet</div><div class='sub_spacer'></div><button id='quiet_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in quiet_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+quiet.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class='happy_bg ht_bg'>
+<div class='sub_flex'> <div class='play_title loud'>High Tempo</div><div class='sub_spacer'></div><button id='ht_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in high_tempo_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+high_tempo.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class='happy_bg lt_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Low Tempo</div><div class='sub_spacer'></div><button id='lt_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in low_tempo_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+low_tempo.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class='happy_bg popular_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Popular</div><div class='sub_spacer'></div><button id='popular_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in popular_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name '>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+popular.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class='happy_bg manic_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Manic</div><div class='sub_spacer'></div><button id='manic_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in high_energy_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name chill'>{{song_name}}</p>
+<p class='song_name album_name chill'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+manic.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+<div class='happy_bg chill_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Chill</div><div class='sub_spacer'></div><button id='chill_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in low_energy_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name chill'>{{song_name}}</p>
+<p class='song_name album_name chill'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+chill.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class='happy_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Light</div><div class='sub_spacer'></div><button id='light_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in happy_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+light.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class='happy_bg dark_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Dark</div><div class='sub_spacer'></div><button id='dark_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in sad_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+dark.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class='happy_bg dance_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Dance</div><div class='sub_spacer'></div><button id='dance_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in dance_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+dance.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+<div class='happy_bg acoustic_bg'>
+<div class='sub_flex'> <div class='play_title loud'>Acoustic</div><div class='sub_spacer'></div><button id='acoustic_button' type='button' class='playlist_button'>Create Playlist</button></div>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,song_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in acoustic_sort_new %}
+<div class='thumb'>
+
+
+
+<a href='{{song_url}}' target="_blank"><img id='img{{j_id}}' class="img_play album"  src={{image_url}}></a>
+
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script><script>
+$( "#img{{j_id}}" ).click(
+  function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+    
+);
+</script>
+<script>
+acoustic.push("{{uri}}")
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+
+$('#loud_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Loud",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Loud"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": loud,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+<script>
+console.log(window.location.href)
+</script>
+
+<script>
+
+$('#quiet_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Quiet",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Quiet"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": quiet,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+
+<script>
+
+$('#ht_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: High Tempo",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: High Tempo"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": high_tempo,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+<script>
+
+$('#lt_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Low Tempo",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Low Tempo"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": low_tempo,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+<script>
+
+$('#popular_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Popular",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Popular"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": popular,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+<script>
+
+$('#manic_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Manic",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Manic"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": manic,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+<script>
+
+$('#chill_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Chill",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Chill"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": chill,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+
+<script>
+
+$('#light_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Light",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Light"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": light,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+<script>
+
+$('#dark_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Dark",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Dark"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": dark,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+<script>
+
+$('#dance_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Dance",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Dance"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": dance,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+<script>
+
+$('#acoustic_button').click(function(){
+var current_url = window.location.href;
+var access_token = current_url.includes("access_token")
+console.log(access_token)
+
+
+
+if (access_token) {
+  console.log("Got access token!")
+
+
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  console.log(at_end)
+  var a_t = current_url.slice(at_start,at_end);
+  console.log(a_t);
+
+  $.ajax({
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+   success: function(response) {
+       console.log(response.id)
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: "https://api.spotify.com/v1/users/" + response.id + "/playlists",
+  data: JSON.stringify({
+  "name": "{{artist_name_site}}: Acoustic",
+  "description": "mood playlist",
+  "public": true
+}),
+ dataType: "json",
+  success: function(response) {
+   var playlist_url = response.external_urls.spotify
+   var playlist_name = "{{artist_name_site}}: Acoustic"
+      $.ajax({
+  type: "POST",
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+  url: 	"https://api.spotify.com/v1/playlists/" + response.id + "/tracks",
+dataType: "json",
+  data: JSON.stringify({
+  "uris": acoustic,
+ 
+}),
+  success: function(response) {
+   
+
+console.log("Playlist created!")
+console.log(playlist_url)
+console.log(playlist_name)
+$('#playlist_slot').text(playlist_name)
+$('#exampleModalCenter').modal('show')
+$('#playlist_linker').attr("href",playlist_url)
+
+
+  },
+ 
+});
+
+
+
+
+
+
+  },
+ 
+});
+
+   },
+
+   
+
+}) 
+} else {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+
+}
+
+}
+
+)
+
+
+</script>
+
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+        <div id='playlist_slot' class='modal_text big_modal'></div>
+               <div class='modal_text small_modal'>has been added to your spotify</div> 
+ 
+
+
+      
+
+      </div>
+    
+    
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+        <a id='playlist_linker' target="_blank" href=''><button type="button" class="btn btn-primary modal_text spotify_color">go to playlist</button></a></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_happy_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+                <div id='modal_un' class='modal_text small_modal un larger_modal'></div>
+               <div class='modal_text small_modal un'>not your username?</div> 
+ 
+
+
+      
+
+      </div>
+    
+    
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+        <a href="https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/viewer/&scope=playlist-modify-public&response_type=token&state=123&show_dialog=true"><button type="button" class="btn btn-primary modal_text spotify_color un_modal">log in to another spotify account</button></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+
+ 
+</div>
+
+</body>
+<script>
+$('#search_viewer').submit(function() {
+  
+
+  $( ".whole_page" ).animate({
+    opacity: 0,
+   
+   
+  }, 100, function() {
+    // Animation complete.
+  });
+        $('#loader-wrapper').css('visibility','unset');
+        $('#loader-wrapper').css('z-index','9999');
+        $('#loader-wrapper').css('opacity','1');
+
+      $('#loader').css('opacity','1'); 
+
+
+}); 
+</script>
+<script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
+

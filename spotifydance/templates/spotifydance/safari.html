@@ -1,0 +1,791 @@
+<html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+<style>
+.grid {
+    display:grid;
+    grid-template-rows:607px;
+}
+
+.column_grid {
+    display:grid;
+    grid-template-rows:800px;
+}
+
+.view_flex {
+    display:flex;
+
+}
+
+.album {
+    height:160px;
+    margin:30px;
+    border-radius:4px;
+}
+
+.thumb:hover {
+    transform:scale(1.1);
+    transition:.5s;
+    animation-timing-function:linear;
+    z-index:1000;
+}
+
+.view_frame {
+    width:100%;
+    overflow-x:scroll;
+    margin:auto;
+   overflow-y:hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+height:432px;
+}
+
+
+
+.view_frame::-webkit-scrollbar {
+background-color: transparent;
+width:3px;
+height:10px;
+
+}
+
+.view_frame::-webkit-scrollbar-thumb {
+    background-color: #ffffff54;
+}
+
+
+
+.happy_bg{
+/*background: linear-gradient(to right, #ece76a 0%, #ff8ab3 100%);  */
+  /*  background: linear-gradient(to right, #ece76a -16%, #ff8ab3 144%);*/
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+/*
+background-color: #f9c1b1;
+background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);*/
+max-width:1fr;
+width:100%; 
+height:607px;
+}
+
+body {
+    width:1fr;
+   margin:0px;
+    font-family:'Montserrat';
+}
+
+.frame_wrapper {
+    width:100%;
+    margin:auto;
+    max-width:1000px;
+}
+
+.song_name {
+width:120px;
+margin:auto;
+font-family:'Oswald';
+font-size:23px;
+color:white;
+}
+
+.album_name {
+width:120px;
+margin:auto;
+font-size:14px;
+font-weight:300;
+}
+
+.header {
+    font-size:42px;
+
+}
+
+.play_title {
+    font-size:57px;
+    color:white;
+    padding-left:30px;
+
+}
+
+.top_grid {
+    display:flex;
+    justify-content:space-between;
+    padding-right:30px;
+    padding-left:30px;
+    align-items:center;
+}
+
+.top_pic {
+    padding-top:8px;
+    padding-bottom:8px;
+    height:60px;
+    border-radius:50%;
+}
+
+.top_pic:hover {
+
+        transform:scale(1.1);
+    transition:.5s;
+}
+
+
+.header {
+}
+
+.artist {
+    display:flex;
+    align-items:center;
+}
+
+.header_artist {
+      padding-right: 12px;
+    font-size: 19px;
+}
+
+.dark_bg {
+
+      background: linear-gradient(
+315deg
+, #f5da33 -6%, #FF8A99 19%, #010057 144%);
+
+   
+}
+
+.dark {
+    color:white;
+}
+
+.light {
+    color: white;
+}
+
+.top_container {
+    position:fixed;
+    background:white;
+    width:100%;
+    z-index:9999;
+
+}
+
+.top_container_guide {
+    position:fixed;
+    background:white;
+    width:100%;
+    z-index:9999;
+    top:40px;
+    top: 76px;
+    height: 32px;
+}
+
+.spacer {
+    width:100%;
+    height:76px;
+}
+
+.manic_bg {
+    background-color: #feae96;
+    background-image: linear-gradient(
+315deg
+, #f7d239 0%, #fe0944 74%);
+}
+
+.manic {
+  color:white;
+}
+
+
+.ht_bg {
+  background-color: #f5df2e;
+background-image: linear-gradient(-27deg, #f5df2e 0%, #ff2e7a 74%);
+}
+
+.ht {
+  color:white;
+}
+
+.lt_bg {
+background-color: #007ea7;
+    background-image: linear-gradient( 
+330deg
+ , #f5df2e 0%,#007ea7 69%);
+}
+
+.lt {
+  color:white;
+}
+
+.popular_bg {
+background-color: #d99058;
+    background-image: linear-gradient( 
+327deg
+ , #f2dd31 4%, #FF8D41 47%);
+}
+
+.popular {
+  color:white;
+}
+
+.chill_bg {
+background-color: #e4eee9;
+    background-image: linear-gradient( 
+142deg
+ , #93a5ce 25%, #E1DB8F 104%);
+}
+
+.chill {
+  color:white;
+}
+
+.dance_bg {
+background-color: #7f5a83;
+background-image: linear-gradient(
+269deg
+, #ff0909 0%, #0d324d 79%);
+
+}
+
+.dance {
+  color:white;
+}
+
+.acoustic_bg {
+    background-image: linear-gradient( 
+334deg
+ , #FFDE42 0%, #fe603c 94%);
+
+}
+
+.loud_bg {
+background-color: #990000;
+    background-image: linear-gradient(
+147deg
+, #FF0146 38%, #d5fd75 109%);
+
+}
+
+.quiet_bg {
+  background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+}
+
+.guide_flex {
+  display:flex;
+  font-size:15px;
+  justify-content:space-evenly;
+}
+
+.loud_guide {
+color: linear-gradient(
+147deg
+, #FF0146 38%, #d5fd75 109%);
+}
+
+.loud_guide:hover {
+  border-bottom:2px solid black;
+
+}
+</style>
+
+</head>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<div class='top_container'><div class='top_grid'><div class='header'>mood</div><div class='artist'><div class='header_artist'>{{search_artist}}</div><img class='top_pic' src={{artist_picture}}></div></div></div>
+<!--<div class='top_container_guide'><div class='guide_flex'><div class='loud_guide'>Loud</div><div class='loud_guide'>Quiet</div><div class='loud_guide'>High Tempo</div><div class='loud_guide'>Low Tempo</div><div class='loud_guide'>Popular</div><div class='loud_guide'>Dark</div><div class='loud_guide'>Light</div><div class='loud_guide'>Manic</div><div class='loud_guide'>Chill</div><div class='loud_guide'>Dance</div><div class='loud_guide'>Acoustic</div></div></div>-->
+<div class='spacer'></div>
+
+
+
+<div class='grid'>
+
+<div class='happy_bg loud_bg'>
+<h1 class='play_title loud'>Loud</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in loud_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name color'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+<!--
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+-->
+
+
+
+<script>
+
+
+const soundEffect{{j_id}} = new Audio();
+
+// onClick of first interaction on page before I need the sounds
+$( "body" ).click(function() {
+ soundEffect{{j_id}}.play();
+
+});
+
+$( "#img{{j_id}}" ).click(function() {
+  console.log("clicked");
+  soundEffect{{j_id}}.src = '{{preview_url}}';
+  soundEffect{{j_id}}.play();
+
+});
+// later on when you actually want to play a sound at any point without user interaction
+
+
+</script>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class='happy_bg quiet_bg'>
+<h1 class='play_title quiet'>Quiet</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in quiet_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class='happy_bg ht_bg'>
+<h1 class='play_title ht'>High Tempo</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in high_tempo_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class='happy_bg lt_bg'>
+<h1 class='play_title lt'>Low Tempo</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in low_tempo_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class='happy_bg popular_bg'>
+<h1 class='play_title popular'>Popular</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in popular_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name '>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class='happy_bg manic_bg'>
+<h1 class='play_title chill'>Manic</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in high_energy_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name chill'>{{song_name}}</p>
+<p class='song_name album_name chill'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+<div class='happy_bg chill_bg'>
+<h1 class='play_title chill'>Chill</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in low_energy_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name chill'>{{song_name}}</p>
+<p class='song_name album_name chill'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class='happy_bg'>
+<h1 class='play_title light'>Light</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in happy_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class='happy_bg dark_bg'>
+<h1 class='play_title dark'>Dark</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in sad_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class='happy_bg dance_bg'>
+<h1 class='play_title dark'>Dance</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in dance_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+<div class='happy_bg acoustic_bg'>
+<h1 class='play_title light'>Acoustic</h1>
+<div class='frame_wrapper'>
+<div class='view_frame'>
+<div class='view_flex'>
+
+
+
+{% for song_id,song_name,popularity,image_url,album_name, preview_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,uri,j_id in acoustic_sort_new %}
+<div class='thumb'>
+
+
+
+<img id='img{{j_id}}' class="img_play album"  src={{image_url}}>
+<p class='song_name light'>{{song_name}}</p>
+<p class='song_name album_name'>{{album_name}}</p>
+<audio id="{{j_id}}" src="{{preview_url}}"></audio>
+
+<script>
+$( "#img{{j_id}}" ).hover(
+  function() {
+    $( "#{{j_id}}" )[0].play();
+  }, 
+    function() {
+    $( "#{{j_id}}" )[0].pause();
+  }, 
+);
+</script>
+
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</html>
+

@@ -1,0 +1,616 @@
+<html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<head>
+
+<style>
+
+body {
+    font-family:'Montserrat';
+    background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+margin:0px;
+}
+.top_container {
+    position:fixed;
+    background:white;
+    width:100%;
+    z-index:9999;
+
+}
+
+.top_grid {
+    display:flex;
+    justify-content:space-between;
+    padding-right:30px;
+    padding-left:30px;
+    align-items:center;
+        height:76px;
+
+}
+
+.header {
+    font-size:42px;
+
+}
+
+#search_viewer {
+  font-family:'Montserrat';
+  margin-block-end:0;
+  font-size:15px;
+  min-width:360px;
+}
+
+.search_box {
+    position: relative;
+   
+    height: 44px;
+    width: 304px;
+  
+    border: 1px solid white;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: 'Montserrat';
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid gray;
+}
+
+.search_box:focus {
+    outline:none;
+}
+
+.search_button:hover {
+    background: #46a4d2;
+    color: white;
+    border-color: linear-gradient( -27deg , #f5df2e 0%, #ff2e7a 74%);
+    transition: .3s;
+}
+.search_button {
+position: relative;
+    height: 44px;
+    width: 50;
+    border: 1px solid white;
+    background: white;
+    color: gray;
+    font-family: 'Montserrat';
+    font-size: 20px;
+
+    border: 1px solid gray;
+    margin-left: 0px;
+    right: 5px;
+}
+
+
+.whole_page {
+    width:1fr;
+   margin:0px;
+    font-family:'Montserrat';
+ 
+    transition:1s;
+}
+
+.whole_page {
+   
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+.whole_page_fade {
+
+    -webkit-animation: fadeout 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 1s; /* Firefox < 16 */
+        -ms-animation: fadeout 1s; /* Internet Explorer */
+         -o-animation: fadeout 1s; /* Opera < 12.1 */
+            animation: fadeout 1s;
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.search_message {
+    color:white;
+    font-size:7vw;
+    padding-top:4vw;
+    padding-left:5vw;
+
+
+}
+.smaller {
+    font-size:5vw;
+}
+.spacer {
+    height:20vw;
+}
+
+.empty {
+    width:100px;
+}
+
+
+
+
+
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+opacity:0;
+visibility:hidden;
+}
+
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 45%;
+    width: 200px;
+    height: 200px;
+    margin: -75px 0 0 -135px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: white;
+
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite; 
+    background:transparent;
+}
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: white;
+
+        -webkit-animation: spin 3s linear infinite; 
+        animation: spin 3s linear infinite; 
+    }
+
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: white;
+
+        -webkit-animation: spin 1.5s linear infinite; 
+          animation: spin 1.5s linear infinite; 
+    }
+
+    @-webkit-keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  
+            -ms-transform: rotate(0deg);  
+            transform: rotate(0deg);  
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  
+            -ms-transform: rotate(360deg);  
+            transform: rotate(360deg);  
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  
+            -ms-transform: rotate(0deg);  
+            transform: rotate(0deg);  
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  
+            -ms-transform: rotate(360deg); 
+            transform: rotate(360deg);  
+        }
+    }
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+}
+ 
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+ 
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+#loader {
+    z-index: 1001; 
+}
+
+
+
+
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  
+    -ms-transform: translateX(-100%); 
+    transform: translateX(-100%);  
+}
+ 
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  
+    -ms-transform: translateX(100%);  
+    transform: translateX(100%);  
+}
+.loaded #loader {
+    opacity: 0;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s ease-out;
+            transition: all 0.3s 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+#user_name_top {
+background:transparent;
+border:none;
+}
+
+#user_name_top:hover {
+text-decoration:underline;
+color:#808080a6;
+}
+
+#user_name {
+color:#808080a6;
+opacity:1;
+transition: .5s ease;
+
+}
+
+.modal_happy_bg{
+
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+
+}
+
+.modal_text {
+font-family:'Montserrat';
+color:white;
+}
+
+
+.big_modal {
+font-size:30px;
+font-weight:700;
+}
+
+.small_modal {
+font-size:20px;
+}
+
+.modal_x {
+color:white;
+background-color:transparent;
+border:none;
+font-size:26px;
+margin-top:-8px;
+
+
+}
+
+.modal_top_flex {
+display:flex;
+justify-content:space-between;
+}
+
+.modal-footer {
+border-top-color:transparent;
+}
+.modal_spacer {
+width:5px;
+}
+
+.modal_bottom_flex {
+display:flex;
+  justify-content:space-between;
+padding-right:20px;
+padding-bottom:19px;
+  padding-bottom: 23px;
+  padding-top: 18px;
+}
+
+
+.modal_un_bg {
+background:white;
+}
+
+.un {
+color:white;
+}
+
+.un_modal {
+width:300px;
+}
+
+.larger_modal {
+font-size:32px;
+}
+      
+.modal_fail_bg {
+    background: linear-gradient(
+682deg
+, #ece659 -16%, #ff8ab3 144%);
+}
+.modal_fail_bg {
+    background: linear-gradient(
+682deg
+, #ece659 -16%, #ff8ab3 144%);
+}
+
+.fail_modal {
+padding-bottom:42px;
+}
+
+
+.spotify_color {
+
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 16px;
+    width: 307px;
+    border-color: white;
+    background-color: transparent;
+    border-style: solid;
+    border: 1x solid white;
+    border: 1px solid white;
+    border-radius:0px;
+    line-height:40px;
+
+}
+
+.spotify_color:hover {
+
+transition:.5s;
+background:white;
+color:#f9a597;
+border:transparent;
+
+
+}
+
+.header a {
+    color:black;
+    text-decoration:none;
+}
+
+.header a:visited {
+    color:black;
+    text-decoration:none;
+}
+
+header a:hover {
+    text-decoration:none;
+    color:black;
+}
+
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+
+<script>
+  var current_url = window.location.href;
+  var access_token = current_url.includes("access_token")
+
+if (access_token) {
+
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.length
+  var a_t = current_url.slice(at_start,at_end);
+
+  $.ajax({
+
+   url: 'https://api.spotify.com/v1/me',
+   type: 'GET',
+   headers: {
+       'Authorization': 'Bearer ' + a_t,
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+
+
+   },
+    statusCode: {
+    401: function() {
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/start/&scope=playlist-modify-public&response_type=token&state=123";
+    }},
+  success: function(response) {
+      var current_user = response.id
+      $('#user_name').text(current_user)
+      $('#modal_un').text(current_user)
+            console.log("loaded")
+
+  },
+  })
+
+} else {
+  var current_user = 'log in'
+  $('#user_name').text(current_user)
+
+}
+
+</script>
+
+
+<body>
+<div class='whole_page'>
+<div class='top_container'><div class='top_grid'><div class='header'><a href="{% url 'start' %}">mood</a></div><form id='search_viewer'>
+  <input id='search_box' class='search_box' type="text" placeholder='search artist' autocomplete='off' name="search_artist">
+    <input id='search_button' class='search_button' type='submit' value='go'>
+    </form><div class='empty'></div><button id='user_name_top'><div id='user_name'></div></button></div></div>
+
+    <div class='search_message'>
+    <div class='spacer'></div>
+No Results Found
+<div class='smaller'>
+Please search again
+</div>
+    </div>
+</div>
+<div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+
+ 
+</div>
+
+  <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_happy_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+                <div id='modal_un' class='modal_text small_modal un larger_modal'></div>
+               <div class='modal_text small_modal un'>not your username?</div> 
+ 
+
+
+
+      </div>
+    
+    
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+        <a href="https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/viewer/&scope=playlist-modify-public&response_type=token&state=123&show_dialog=true"><button type="button" class="modal_text spotify_color un_modal">log in to another spotify account</button></a></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+$('#search_viewer').submit(function(event) {
+   event.preventDefault();
+  
+
+  $( ".whole_page" ).animate({
+    opacity: 0,
+   
+   
+  }, 100, function() {
+    // Animation complete.
+  });
+        $('#loader-wrapper').css('visibility','unset');
+        $('#loader-wrapper').css('z-index','9999');
+        $('#loader-wrapper').css('opacity','1');
+
+      $('#loader').css('opacity','1'); 
+
+var current_url = window.location.href;
+  var at_start = current_url.indexOf("access_token") + 13;
+  var at_end = current_url.indexOf("&");
+  var a_t = current_url.slice(at_start,at_end);
+
+  var sa = $('#search_box').val()
+
+  window.location.href = '/viewer/?search_artist=' + sa + '#access_token=' + a_t
+ 
+
+}); 
+</script>
+
+<script>
+$('#user_name_top').click( function(){
+  
+  console.log('clicked!')
+  $('#login_modal').modal('show')
+  var cu = $('#user_name').text()
+        $('#modal_un').text(cu)
+  
+});
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+$('#search_button').click(function(){
+
+      event.preventDefault();
+
+
+var search_1 = $('#search_box').val();
+
+
+if (search_1.length == 0) {
+
+
+}else {
+
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/land/&scope=playlist-modify-public&response_type=token&state=" + search_1 ;
+
+}
+
+
+
+
+}
+
+)
+</script>
+</html>

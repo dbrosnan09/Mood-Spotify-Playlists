@@ -1,0 +1,333 @@
+<html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<head>
+<style>
+
+body {
+    opacity:0;
+    transition:2s;
+ background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+ height:100%;
+ margin:0px;
+}
+.mood {
+     font-family: "Montserrat";
+    font-size: 28vw;
+    font-weight: 500;
+    color: white;
+
+
+}
+
+.playlists {
+   
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 5vw;
+    position: relative;
+    top: -5vw;
+    right: -44vw;
+        width: 39vw;
+}
+
+.spotify {
+    display:inline-block;
+    color:white;
+}
+
+.search_box {
+    position: relative;
+    right: -43.6vw;
+    height: 5vw;
+    width: 32vw;
+    top: -2.9vw;
+    border: 1px solid white;
+    font-size: 2.5vw;
+    font-weight: lighter;
+    font-family: 'Montserrat';
+    text-align: left;
+    padding-left: 10px;
+}
+
+.search_button {
+    position: relative;
+    right: -42vw;
+    top: -2.9vw;
+    height: 5vw;
+    width: 7vw;
+    border: 1px solid white;
+    background: white;
+    color: #737373;
+    font-family: 'Montserrat';
+    font-size: 2.5vw;
+}
+
+
+.search_button:hover {
+background:#46a4d2;
+color:white;
+border-color:linear-gradient(
+-27deg
+, #f5df2e 0%, #ff2e7a 74%);
+transition:.3s;
+cursor:pointer;
+}
+
+::placeholder {
+  color: #b3b3b3;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #b3b3b3;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #b3b3b3;
+}
+
+.search_box:focus {
+    outline:none;
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+}
+
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 45%;
+    width: 200px;
+    height: 200px;
+    margin: -75px 0 0 -135px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: white;
+
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite; 
+    background:transparent;
+}
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: white;
+
+        -webkit-animation: spin 3s linear infinite; 
+        animation: spin 3s linear infinite; 
+    }
+
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: white;
+
+        -webkit-animation: spin 1.5s linear infinite; 
+          animation: spin 1.5s linear infinite; 
+    }
+
+    @-webkit-keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  
+            -ms-transform: rotate(0deg);  
+            transform: rotate(0deg);  
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  
+            -ms-transform: rotate(360deg);  
+            transform: rotate(360deg);  
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  
+            -ms-transform: rotate(0deg);  
+            transform: rotate(0deg);  
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  
+            -ms-transform: rotate(360deg); 
+            transform: rotate(360deg);  
+        }
+    }
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+}
+ 
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+ 
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+#loader {
+    z-index: 1001; 
+}
+h1 {
+    color: #EEEEEE;
+}
+
+
+
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  
+    -ms-transform: translateX(-100%); 
+    transform: translateX(-100%);  
+}
+ 
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  
+    -ms-transform: translateX(100%);  
+    transform: translateX(100%);  
+}
+.loaded #loader {
+    opacity: 0;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s ease-out;
+            transition: all 0.3s 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+
+
+*/
+
+
+</style>
+</head>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<body class='loaded'>
+
+
+<div class='mood'>mood</div>
+<div class='playlists'><div class='spotify'>spotify</div> playlists</div>
+
+<form id='search_viewer' method='get'>
+  <input id='search_box' class='search_box' type="text" placeholder='search artist' autocomplete='off' name="search_artist">
+    <input id='search_button' class='search_button' type='submit' value='go'>
+    </form>
+ 
+
+<div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+ 
+</div>
+
+</body>
+
+<script>
+$( window ).ready(function() {
+   console.log("ready")
+   $("body").css('opacity', '2.5')
+});
+</script>
+
+<!--
+<script>
+$('#search_box').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      $('#loader-wrapper').css('visibility','unset');
+      $('#loader').css('opacity','1'); 
+    }
+});
+</script>-->
+
+
+<script>
+$('#search_viewer').submit(function(){
+
+
+event.preventDefault();
+var search_for = $('#search_box').val();
+
+window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://127.0.0.1:8000/land/&scope=playlist-modify-public&response_type=token&state=" + search_for;
+
+
+
+}
+
+)
+</script>
+<script>
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+
+</html>

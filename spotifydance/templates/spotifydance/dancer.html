@@ -1,0 +1,75 @@
+<html>
+<head>
+<style>
+.grid {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+}
+</style>
+</head>
+<h2>{{search_artist}}</h2>
+
+
+<img src={{artist_picture}}>
+<div class='grid'>
+
+<div>
+<h1>Popularity</h1>
+
+{% for song_id,song_name,popularity,image_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo in song_list %}
+<p>{{song_name}}</p>
+
+<img src={{image_url}}>
+<p>{{popularity}}</p>
+
+{% endfor %}
+</div>
+<div>
+<h1>Valence</h1>
+
+{% for song_id,song_name,popularity,image_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo in valence_sort %}
+<p>{{song_name}}</p>
+
+<img src={{image_url}}>
+<p>{{valence}}</p>
+
+{% endfor %}
+</div>
+
+<div>
+<h1>Acoustic</h1>
+
+{% for song_id,song_name,popularity,image_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo in acoustic_sort %}
+<p>{{song_name}}</p>
+
+<img src={{image_url}}>
+<p>{{acousticness}}</p>
+
+{% endfor %}
+</div>
+
+
+<div>
+<h1>Happy</h1>
+
+{% for song_id,song_name,popularity,image_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo in happy_sort %}
+<p>{{song_name}}</p>
+
+<img src={{image_url}}>
+<p>{{valence}}</p>
+
+{% endfor %}
+</div>
+<div>
+<h1>Sad</h1>
+
+{% for song_id,song_name,popularity,image_url,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo in sad_sort %}
+<p>{{song_name}}</p>
+
+<img src={{image_url}}>
+<p>{{valence}}</p>
+
+{% endfor %}
+</div>
+</div>
+</html>
