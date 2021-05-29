@@ -244,6 +244,8 @@ h1 {
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
+
+
   <link rel="icon"href="{% static 'mood_fav.ico' %}">
 
 </head>
@@ -292,6 +294,15 @@ $.ajax({
 
    },
  dataType: 'json',
+    statusCode: {
+    400: function() {
+console.log("400 error")    
+}},
+
+    statusCode: {
+    401: function() {
+console.log("401 error")    
+}},
   success: function(response) {
       console.log('artist info successfully retrieved')
 
