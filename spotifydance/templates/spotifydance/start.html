@@ -52,6 +52,7 @@ body {
     font-weight: lighter;
     font-family: 'Montserrat';
     text-align: left;
+    padding:0px;
     padding-left: 10px;
 }
 
@@ -66,6 +67,7 @@ body {
     color: #737373;
     font-family: 'Montserrat';
     font-size: 2.5vw;
+    padding:0px;
 }
 
 
@@ -241,6 +243,14 @@ h1 {
                 transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
+.start_flex {
+    display:flex;
+}
+
+.title_container {
+    
+}
+
 
 * {
   -webkit-box-sizing: content-box;
@@ -269,7 +279,8 @@ h1 {
   crossorigin="anonymous"></script>
 <body class='loaded'>
 
-
+<div class='start_flex'>
+<div class='title_container'>
 <div class='mood'>mood</div>
 <div class='playlists'><div class='spotify'>spotify</div> playlists</div>
 
@@ -277,7 +288,8 @@ h1 {
   <input id='search_box' class='search_box' type="text" placeholder='search artist' autocomplete='off' name="search_artist">
     <input id='search_button' class='search_button' type='submit' value='go'>
     </form>
- 
+ </div>
+ </div>
 
 <div id="loader-wrapper">
     <div id="loader"></div>
