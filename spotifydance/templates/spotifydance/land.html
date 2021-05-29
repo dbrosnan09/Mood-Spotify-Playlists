@@ -268,6 +268,7 @@ h1 {
 
 
 <script>
+console.log('started script')
 var current_url = window.location.href;
   var at_start = current_url.indexOf("access_token") + 13;
   var at_end = current_url.indexOf("&");
@@ -276,6 +277,7 @@ var current_url = window.location.href;
   var se_end = current_url.length
   var sa = current_url.slice(se_start,se_end)
 
+console.log('about to ajax')
 
 $.ajax({
 
@@ -290,6 +292,8 @@ $.ajax({
    },
  dataType: 'json',
   success: function(response) {
+      console.log('artist info successfully retrieved')
+
        console.log(response)
         var artist_image_src = response.artists.items[0].images[0].url
       var artist_name = response.artists.items.name
