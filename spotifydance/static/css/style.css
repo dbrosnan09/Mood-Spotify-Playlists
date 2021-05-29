@@ -1953,6 +1953,9 @@ text-align:center;
 @media only screen and (max-width: 1010px) {
 .header a {
 font-size:33px;
+font-weight: 400;
+margin-right:20px;
+
 }
 
 }
@@ -1990,8 +1993,9 @@ display:none;
 }
 
 .top_pic {
-height:30px;
-width:30px;
+height:37px;
+width:37px;
+padding:0px;
 }
 
 .top_pic_ham {
@@ -2123,8 +2127,10 @@ top:50;
 display:none;
 }
 
-.rj_flex {
-margin-right:30px;
+
+
+.first_spacer {
+width:0px;
 }
 
 .header_artist_sub {
