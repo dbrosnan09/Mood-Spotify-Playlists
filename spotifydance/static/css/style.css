@@ -251,9 +251,13 @@ font-family:'Montserrat';
 .header_artist_ham {
   font-size:16px;
   display:none;
+  margin-left:6px;
+
 }
 .header_artist_ham_mult {
   font-size:16px;
+  margin-left:6px;
+
 }
 
 .header_artist_sub {
@@ -1896,6 +1900,8 @@ text-align:center;
  /* right: 29px; */
  z-index: 9000;
  padding:0px;
+ position: relative;
+ top: 4px;
 
 }
 
@@ -2001,13 +2007,12 @@ padding:0px;
 .top_pic_ham {
   height:30px;
   width:30px;
-  padding-right:6px;
+
   }
 
   .top_pic_ham_mult {
     height:30px;
     width:30px;
-    margin-right:6px;
     border-radius:50%;
     }
 
@@ -2142,6 +2147,8 @@ width:0px;
 .header_artist_ham {
   font-size:16px;
   display:block;
+  margin-left:6px;
+
 }
 
 .artist_ham {
