@@ -606,9 +606,10 @@ position: relative;
     font-size: 16px;
     border: 1px solid gray;
     position: relative;
-    top: -1px;
-    left:-5px;
    
+    left:-5px;
+   padding-top:1px;
+   padding-bottom:1px;
   }
 
 .search_button_sub {
@@ -1084,6 +1085,8 @@ background:#f4be80;
     width: 45px;
     position: relative;
     top: 0;
+    border-left-width: 0px;
+    left:-6px;
   }
   
   #add_button_ham:hover {
