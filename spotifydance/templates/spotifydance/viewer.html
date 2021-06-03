@@ -277,49 +277,7 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 
 <p class='song_name color'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
 
-
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
-
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script>
-<script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 
 <script>
 loud.push("{{uri}}")
@@ -352,46 +310,7 @@ loud.push("{{uri}}")
 
 <p class='song_name'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 quiet.push("{{uri}}")
 </script>
@@ -425,46 +344,7 @@ quiet.push("{{uri}}")
 
 <p class='song_name'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 high_tempo.push("{{uri}}")
 </script>
@@ -495,46 +375,7 @@ high_tempo.push("{{uri}}")
 
 <p class='song_name'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 low_tempo.push("{{uri}}")
 </script>
@@ -564,46 +405,7 @@ low_tempo.push("{{uri}}")
 
 <p class='song_name '>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 popular.push("{{uri}}")
 </script>
@@ -638,46 +440,7 @@ popular.push("{{uri}}")
 
 <p class='song_name chill'>{{song_name}}</p>
 <p class='song_name album_name chill'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 manic.push("{{uri}}")
 </script>
@@ -706,46 +469,7 @@ manic.push("{{uri}}")
 
 <p class='song_name chill'>{{song_name}}</p>
 <p class='song_name album_name chill'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 chill.push("{{uri}}")
 </script>
@@ -776,46 +500,7 @@ chill.push("{{uri}}")
 
 <p class='song_name light'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 light.push("{{uri}}")
 </script>
@@ -847,46 +532,7 @@ light.push("{{uri}}")
 
 <p class='song_name light'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 dark.push("{{uri}}")
 </script>
@@ -919,46 +565,7 @@ dark.push("{{uri}}")
 
 <p class='song_name light'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 dance.push("{{uri}}")
 </script>
@@ -987,46 +594,7 @@ dance.push("{{uri}}")
 
 <p class='song_name light'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
-<audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-$( "#img{{j_id}}" ).hover(
-        function() {
-       var audio = document.getElementById("{{j_id}}");
-        audio.volume = 0.0;
-         $( "#{{j_id}}" )[0].play();
 
-         var vol = 0.0;
-
-
-         var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if (vol < .02) {
-            vol += .0004;
-            audio.volume = vol;
-        }
-        // When volume at zero stop all the intervalling
-        if (vol >= .02) {
-
-            clearInterval(fadeAudio);
-        }
-    }, 50)}, function() {
-    $( "#{{j_id}}" )[0].pause()
-    }
-    );
-
-
-
-
-
-</script><script>
-$( "#img{{j_id}}" ).click(
-  function() {
-    $( "#{{j_id}}" )[0].pause();
-  },
-
-);
-</script>
 <script>
 acoustic.push("{{uri}}")
 </script>
