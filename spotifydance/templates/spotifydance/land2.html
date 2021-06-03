@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/png" href="{% static 'mod_fav.ico' %}"/>
 
 <style>
 body {
@@ -18,9 +19,12 @@ height:100%;
     width: 100%;
     height: 100%;
     z-index: 1000;
-background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
+
 visibility:unset;
 animation: fadein 2s;
+display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -28,17 +32,16 @@ animation: fadein 2s;
 #loader {
     display: block;
     position: relative;
-    left: 57%;
-    top: 45%;
+
     width: 200px;
     height: 200px;
-    margin: -75px 0 0 -135px;
+
     border-radius: 50%;
     border: 10px solid transparent;
     border-top-color: white;
     opacity:1;
-    -webkit-animation: spin 2s linear infinite; 
-    animation: spin 2s linear infinite; 
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
     background:transparent;
 }
     #loader:before {
@@ -52,8 +55,8 @@ animation: fadein 2s;
         border: 10px solid transparent;
         border-top-color: white;
 
-        -webkit-animation: spin 3s linear infinite; 
-        animation: spin 3s linear infinite; 
+        -webkit-animation: spin 3s linear infinite;
+        animation: spin 3s linear infinite;
     }
 
     #loader:after {
@@ -67,32 +70,32 @@ animation: fadein 2s;
         border: 10px solid transparent;
         border-top-color: white;
 
-        -webkit-animation: spin 1.5s linear infinite; 
-          animation: spin 1.5s linear infinite; 
+        -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
     }
 
     @-webkit-keyframes spin {
-        0%   { 
-            -webkit-transform: rotate(0deg);  
-            -ms-transform: rotate(0deg);  
-            transform: rotate(0deg);  
+        0%   {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
         }
         100% {
-            -webkit-transform: rotate(360deg);  
-            -ms-transform: rotate(360deg);  
-            transform: rotate(360deg);  
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
         }
     }
     @keyframes spin {
-        0%   { 
-            -webkit-transform: rotate(0deg);  
-            -ms-transform: rotate(0deg);  
-            transform: rotate(0deg);  
+        0%   {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
         }
         100% {
-            -webkit-transform: rotate(360deg);  
-            -ms-transform: rotate(360deg); 
-            transform: rotate(360deg);  
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
         }
     }
 
@@ -104,17 +107,17 @@ animation: fadein 2s;
     background: white;
     z-index: 1000;
 }
- 
+
 #loader-wrapper .loader-section.section-left {
     left: 0;
 }
- 
+
 #loader-wrapper .loader-section.section-right {
     right: 0;
 }
 
 #loader {
-    z-index: 1001; 
+    z-index: 1001;
 }
 h1 {
     color: #EEEEEE;
@@ -123,15 +126,15 @@ h1 {
 
 
 .loaded #loader-wrapper .loader-section.section-left {
-    -webkit-transform: translateX(-100%);  
-    -ms-transform: translateX(-100%); 
-    transform: translateX(-100%);  
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
- 
+
 .loaded #loader-wrapper .loader-section.section-right {
-    -webkit-transform: translateX(100%);  
-    -ms-transform: translateX(100%);  
-    transform: translateX(100%);  
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
 }
 .loaded #loader {
     opacity: 0;
@@ -148,13 +151,13 @@ h1 {
 }
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
- 
+
     -webkit-transition: all 0.3s 0.3s ease-out;
             transition: all 0.3s 0.3s ease-out;
 }
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
- 
+
     -webkit-transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
                 transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
@@ -177,11 +180,10 @@ h1 {
     object-fit: cover;
     display: block;
     position: relative;
-    left: 57%;
-    top: 45%;
+
     width: 315px;
     height: 315px;
-    margin: -66px 0 0 -181px;
+
     border-radius: 50%;
     /* border: 10px solid transparent; */
     /* border-top-color: white; */
@@ -189,14 +191,13 @@ h1 {
     /* -webkit-animation: spin 2s linear infinite; */
     /* animation: spin 2s linear infinite; */
     background: transparent;
-    margin-top: -268px;
-    padding-right: -25px;
+
     object-fit: cover;
 
 
 
 
-    
+
 
 
 }
@@ -205,6 +206,20 @@ h1 {
     opacity:1;
     transition:3s;
 }
+
+
+
+
+#artist_pic_wrapper {
+    position:fixed;
+    height:100%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 @keyframes example {
   0%   {opacity: 0;}
@@ -247,14 +262,18 @@ h1 {
 <div id="loader-wrapper">
     <div id="loader">
 
-    
-    </div>
- 
-    <img id='image1' class='top_pic_big'>
 
-<div id='artist_image_name'></div>
- 
+    </div>
+
+
+
+
+
 </div>
+<div id='artist_pic_wrapper'>
+<div id='artist_image_name'></div>
+</div>
+
 
 <script>
 var current_url = window.location.href;
@@ -284,9 +303,11 @@ $.ajax({
        console.log(response)
         var artist_image_src = response.artists.items[0].images[0].url
       var artist_name = response.artists.items.name
-      $('#image1').attr('src',artist_image_src)
+      $( "#artist_image_name" ).after( "<img id='image1' class='top_pic_big' src=" + artist_image_src + ">" );
+
+
       $('#artist_image_name').text(artist_name)
-          
+
 
   },
   })

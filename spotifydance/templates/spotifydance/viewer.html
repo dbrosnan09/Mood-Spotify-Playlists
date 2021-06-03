@@ -11,7 +11,8 @@
 <head>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon"href="{% static 'mood_fav.ico' %}">
+
+<link rel="shortcut icon" type="image/png" href="{% static 'mod_fav.ico' %}"/>
 
 <style>
 
@@ -60,7 +61,7 @@ var acoustic = [];
 if (access_token) {
 
   var at_start = current_url.indexOf("access_token") + 13;
-  var at_end = current_url.length 
+  var at_end = current_url.length
   var a_t = current_url.slice(at_start,at_end);
   console.log(a_t)
 
@@ -120,34 +121,34 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 
 <script>
 $('#user_name_top').click( function(){
-  
+
   console.log('clicked!')
   $('#login_modal').modal('show')
   var cu = $('#user_name').text()
         $('#modal_un').text(cu)
-  
+
 });
 </script>
 
 <script>
 $('#user_ham').click( function(){
-  
+
   console.log('clicked!')
   $('#login_modal').modal('show')
   var cu = $('#user_name').text()
         $('#modal_un').text(cu)
-  
+
 });
 </script>
 
 <script>
 $('#hamburger').click( function(){
-  
+
   $('.ham_expand').toggleClass('show_ham')
 
 
 
-  
+
 });
 </script>
 
@@ -277,27 +278,46 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 <p class='song_name color'>{{song_name}}</p>
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
-<script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
+
 
 <script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script>
 <script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 
@@ -334,25 +354,42 @@ loud.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -390,25 +427,42 @@ quiet.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -443,25 +497,42 @@ high_tempo.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -495,25 +566,42 @@ low_tempo.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -552,25 +640,42 @@ popular.push("{{uri}}")
 <p class='song_name album_name chill'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -603,25 +708,42 @@ manic.push("{{uri}}")
 <p class='song_name album_name chill'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -656,26 +778,42 @@ chill.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
-
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -711,25 +849,42 @@ light.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -766,25 +921,42 @@ dark.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -817,25 +989,42 @@ dance.push("{{uri}}")
 <p class='song_name album_name'>{{album_name}}</p>
 <audio id="{{j_id}}" src="{{preview_url}}"></audio>
 <script>
-  var audio = document.getElementById("{{j_id}}");
-  audio.volume = 0.04;
-</script>
-
-<script>
 $( "#img{{j_id}}" ).hover(
-  function() {
-    $( "#{{j_id}}" )[0].play();
-  }, 
-    function() {
-    $( "#{{j_id}}" )[0].pause();
-  }, 
-);
+        function() {
+       var audio = document.getElementById("{{j_id}}");
+        audio.volume = 0.0;
+         $( "#{{j_id}}" )[0].play();
+
+         var vol = 0.0;
+
+
+         var fadeAudio = setInterval(function () {
+
+        // Only fade if past the fade out point or not at zero already
+        if (vol < .02) {
+            vol += .0004;
+            audio.volume = vol;
+        }
+        // When volume at zero stop all the intervalling
+        if (vol >= .02) {
+
+            clearInterval(fadeAudio);
+        }
+    }, 50)}, function() {
+    $( "#{{j_id}}" )[0].pause()
+    }
+    );
+
+
+
+
+
 </script><script>
 $( "#img{{j_id}}" ).click(
   function() {
     $( "#{{j_id}}" )[0].pause();
-  }, 
-    
+  },
+
 );
 </script>
 <script>
@@ -921,10 +1110,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": loud,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -941,7 +1130,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -950,14 +1139,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1045,10 +1234,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": quiet,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1068,7 +1257,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1077,14 +1266,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1169,10 +1358,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": high_tempo,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1191,7 +1380,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1200,14 +1389,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1291,10 +1480,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": low_tempo,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1313,7 +1502,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1322,14 +1511,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1413,10 +1602,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": popular,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1438,7 +1627,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1447,14 +1636,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1538,10 +1727,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": manic,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1561,7 +1750,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1570,14 +1759,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1660,10 +1849,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": chill,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1683,7 +1872,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1692,14 +1881,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1784,10 +1973,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": light,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1807,7 +1996,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1816,14 +2005,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -1906,10 +2095,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": dark,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -1927,7 +2116,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -1936,14 +2125,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -2027,10 +2216,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": dance,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -2049,7 +2238,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -2058,14 +2247,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -2149,10 +2338,10 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 dataType: "json",
   data: JSON.stringify({
   "uris": acoustic,
- 
+
 }),
   success: function(response) {
-   
+
 
 console.log("Playlist created!")
 console.log(playlist_url)
@@ -2172,7 +2361,7 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
 
@@ -2181,14 +2370,14 @@ $('#playlist_linker').attr("href",playlist_url)
 
 
   },
- 
+
 });
 
    },
 
-   
 
-}) 
+
+})
 } else {
 window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/start/&scope=playlist-modify-public&response_type=token&state=123";
 
@@ -2217,15 +2406,15 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
           <span aria-hidden="true">&times;</span>
         </button></div>
         <div id='playlist_slot' class='modal_text big_modal'></div>
-               <div class='modal_text small_modal'>has been added to your spotify</div> 
- 
+               <div class='modal_text small_modal'>has been added to your spotify</div>
 
 
-      
+
+
 
       </div>
-    
-    
+
+
         <div class='modal_bottom_flex'><div class='modal_spacer'></div>
         <a id='playlist_linker' target="_blank" href=''><button id='playlist_linker_button' type="button" class="modal_text spotify_color">go to playlist</button></a></div>
       </div>
@@ -2244,15 +2433,15 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
           <span aria-hidden="true">&times;</span>
         </button></div>
                 <div id='modal_un' class='modal_text small_modal un larger_modal'></div>
-               <div class='modal_text small_modal un'>not your username?</div> 
- 
+               <div class='modal_text small_modal un'>not your username?</div>
 
 
-      
+
+
 
       </div>
-    
-    
+
+
         <div class='modal_bottom_flex'><div class='modal_spacer'></div>
         <a href="https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/viewer/&scope=playlist-modify-public&response_type=token&state=123&show_dialog=true"><button type="button" class="btn btn-primary modal_text spotify_color un_modal">log in to another spotify account</button></a></div>
       </div>
@@ -2270,22 +2459,22 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
         <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button></div>
-               
+
                <div class='modal_text small_modal un larger_modal'>{% if fail_search_term %}
 
 {{fail_search_term}}
 
 
-{% endif %}</div> 
-               <div class='modal_text small_modal un fail_modal'>could not be found. Please search another term.</div> 
- 
+{% endif %}</div>
+               <div class='modal_text small_modal un fail_modal'>could not be found. Please search another term.</div>
 
 
-      
+
+
 
       </div>
-    
-    
+
+
 
       </div>
     </div>
@@ -2301,20 +2490,20 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 </div>
 <div id="loader-wrapper">
     <div id="loader"></div>
- 
 
- 
+
+
 </div>
 
 </body>
 <script>
 $('#search_viewer').submit(function() {
-  
+
 
   $( ".whole_page" ).animate({
     opacity: 0,
-   
-   
+
+
   }, 100, function() {
     // Animation complete.
   });
@@ -2322,10 +2511,10 @@ $('#search_viewer').submit(function() {
         $('#loader-wrapper').css('z-index','9999');
         $('#loader-wrapper').css('opacity','1');
 
-      $('#loader').css('opacity','1'); 
+      $('#loader').css('opacity','1');
 
 
-}); 
+});
 </script>
 <script
 			  src="https://code.jquery.com/jquery-3.6.0.js"

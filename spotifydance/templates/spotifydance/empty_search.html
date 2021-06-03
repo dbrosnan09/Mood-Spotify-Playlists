@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/png" href="{% static 'mod_fav.ico' %}"/>
 
 <head>
 
@@ -16,6 +17,7 @@ body {
     font-family:'Montserrat';
     background: linear-gradient(682deg, #ece659 -16%, #ff8ab3 144%);
 margin:0px;
+   height:100%;
 }
 .top_container {
     position:fixed;
@@ -49,10 +51,10 @@ margin:0px;
 
 .search_box {
     position: relative;
-   
+
     height: 44px;
     width: 304px;
-  
+
     border: 1px solid white;
     font-size: 20px;
     font-weight: lighter;
@@ -85,6 +87,9 @@ position: relative;
     border: 1px solid gray;
     margin-left: 0px;
     right: 5px;
+    padding-top:1px;
+    padding-bottom:1px;
+
 }
 
 
@@ -92,12 +97,12 @@ position: relative;
     width:1fr;
    margin:0px;
     font-family:'Montserrat';
- 
+
     transition:1s;
 }
 
 .whole_page {
-   
+
 
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -188,8 +193,8 @@ visibility:hidden;
     border: 10px solid transparent;
     border-top-color: white;
 
-    -webkit-animation: spin 2s linear infinite; 
-    animation: spin 2s linear infinite; 
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
     background:transparent;
 }
     #loader:before {
@@ -203,8 +208,8 @@ visibility:hidden;
         border: 10px solid transparent;
         border-top-color: white;
 
-        -webkit-animation: spin 3s linear infinite; 
-        animation: spin 3s linear infinite; 
+        -webkit-animation: spin 3s linear infinite;
+        animation: spin 3s linear infinite;
     }
 
     #loader:after {
@@ -218,32 +223,32 @@ visibility:hidden;
         border: 10px solid transparent;
         border-top-color: white;
 
-        -webkit-animation: spin 1.5s linear infinite; 
-          animation: spin 1.5s linear infinite; 
+        -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
     }
 
     @-webkit-keyframes spin {
-        0%   { 
-            -webkit-transform: rotate(0deg);  
-            -ms-transform: rotate(0deg);  
-            transform: rotate(0deg);  
+        0%   {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
         }
         100% {
-            -webkit-transform: rotate(360deg);  
-            -ms-transform: rotate(360deg);  
-            transform: rotate(360deg);  
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
         }
     }
     @keyframes spin {
-        0%   { 
-            -webkit-transform: rotate(0deg);  
-            -ms-transform: rotate(0deg);  
-            transform: rotate(0deg);  
+        0%   {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
         }
         100% {
-            -webkit-transform: rotate(360deg);  
-            -ms-transform: rotate(360deg); 
-            transform: rotate(360deg);  
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
         }
     }
 
@@ -255,32 +260,32 @@ visibility:hidden;
     background: white;
     z-index: 1000;
 }
- 
+
 #loader-wrapper .loader-section.section-left {
     left: 0;
 }
- 
+
 #loader-wrapper .loader-section.section-right {
     right: 0;
 }
 
 #loader {
-    z-index: 1001; 
+    z-index: 1001;
 }
 
 
 
 
 .loaded #loader-wrapper .loader-section.section-left {
-    -webkit-transform: translateX(-100%);  
-    -ms-transform: translateX(-100%); 
-    transform: translateX(-100%);  
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
- 
+
 .loaded #loader-wrapper .loader-section.section-right {
-    -webkit-transform: translateX(100%);  
-    -ms-transform: translateX(100%);  
-    transform: translateX(100%);  
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
 }
 .loaded #loader {
     opacity: 0;
@@ -297,13 +302,13 @@ visibility:hidden;
 }
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
- 
+
     -webkit-transition: all 0.3s 0.3s ease-out;
             transition: all 0.3s 0.3s ease-out;
 }
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
- 
+
     -webkit-transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
                 transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
@@ -393,7 +398,7 @@ width:300px;
 .larger_modal {
 font-size:32px;
 }
-      
+
 .modal_fail_bg {
     background: linear-gradient(
 682deg
@@ -519,12 +524,7 @@ Please search again
 </div>
     </div>
 </div>
-<div id="loader-wrapper">
-    <div id="loader"></div>
- 
 
- 
-</div>
 
   <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -535,14 +535,14 @@ Please search again
           <span aria-hidden="true">&times;</span>
         </button></div>
                 <div id='modal_un' class='modal_text small_modal un larger_modal'></div>
-               <div class='modal_text small_modal un'>not your username?</div> 
- 
+               <div class='modal_text small_modal un'>not your username?</div>
+
 
 
 
       </div>
-    
-    
+
+
         <div class='modal_bottom_flex'><div class='modal_spacer'></div>
         <a href="https://accounts.spotify.com/authorize?client_id=efbd704e955543d5a3d9d9ca45426daf&redirect_uri=http://mood.pythonanywhere.com/viewer/&scope=playlist-modify-public&response_type=token&state=123&show_dialog=true"><button type="button" class="modal_text spotify_color un_modal">log in to another spotify account</button></a></div>
       </div>
@@ -553,12 +553,12 @@ Please search again
 <script>
 $('#search_viewer').submit(function(event) {
    event.preventDefault();
-  
+
 
   $( ".whole_page" ).animate({
     opacity: 0,
-   
-   
+
+
   }, 100, function() {
     // Animation complete.
   });
@@ -566,7 +566,7 @@ $('#search_viewer').submit(function(event) {
         $('#loader-wrapper').css('z-index','9999');
         $('#loader-wrapper').css('opacity','1');
 
-      $('#loader').css('opacity','1'); 
+      $('#loader').css('opacity','1');
 
 var current_url = window.location.href;
   var at_start = current_url.indexOf("access_token") + 13;
@@ -576,19 +576,19 @@ var current_url = window.location.href;
   var sa = $('#search_box').val()
 
   window.location.href = '/viewer/?search_artist=' + sa + '#access_token=' + a_t
- 
 
-}); 
+
+});
 </script>
 
 <script>
 $('#user_name_top').click( function(){
-  
+
   console.log('clicked!')
   $('#login_modal').modal('show')
   var cu = $('#user_name').text()
         $('#modal_un').text(cu)
-  
+
 });
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
