@@ -118,11 +118,11 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
   <input id='search_box_ham' class='search_box_ham' type="text" placeholder='search artist' autocomplete='off' name="search_artist">
     <input id='search_button_ham' class='search_button_ham' type='submit' value='go'>
     </form><input id='add_button_ham' class='search_button_ham' type='submit' value='add'></div>
-<div class='ham_line' id='artist1_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist_picture}}><div class='flex_artist_mult'><div id='artist1' class='header_artist_ham_mult'>{{artist_name_site}}</div></div><div id='artist1_close' class='closer'>x</div></div></div></div>
+<div class='ham_line' id='artist1_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist_picture}}><div class='flex_artist_mult'><div id='artist1' class='header_artist_ham_mult'>{{artist_name_site}}</div></div><div id='artist1_close_ham' class='closer'>x</div></div></div></div>
 
-<div class='ham_line' id='artist2_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist2_picture}}><div class='flex_artist_mult'><div id='artist2' class='header_artist_ham_mult'>{{artist2_name_site}}</div></div><div id='artist2_close' class='closer'>x</div></div></div></div>
-<div class='ham_line' id='artist3_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist3_picture}}><div class='flex_artist_mult'><div id='artist3' class='header_artist_ham_mult'>{{artist3_name_site}}</div></div><div id='artist3_close' class='closer'>x</div></div></div></div>
-<div class='ham_line' id='artist4_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist4_picture}}><div class='flex_artist_mult'><div id='artist4' class='header_artist_ham_mult'>{{artist4_name_site}}</div></div><div id='artist4_close' class='closer'>x</div></div></div></div>
+<div class='ham_line' id='artist2_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist2_picture}}><div class='flex_artist_mult'><div id='artist2' class='header_artist_ham_mult'>{{artist2_name_site}}</div></div><div id='artist2_close_ham' class='closer'>x</div></div></div></div>
+<div class='ham_line' id='artist3_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist3_picture}}><div class='flex_artist_mult'><div id='artist3' class='header_artist_ham_mult'>{{artist3_name_site}}</div></div><div id='artist3_close_ham' class='closer'>x</div></div></div></div>
+<div class='ham_line' id='artist4_ham'><div class='artist_ham_mult'><div class='rj_flex_mult'><img class='top_pic_ham_mult' src={{artist4_picture}}><div class='flex_artist_mult'><div id='artist4' class='header_artist_ham_mult'>{{artist4_name_site}}</div></div><div id='artist4_close_ham' class='closer'>x</div></div></div></div>
 
 <div class='ham_line_u'><div id='user_ham' class='user_ham'></div></div>
 
@@ -214,14 +214,253 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
 </script>
 
 
+
+
+
+
+
+
 <script>
 
 $("#artist1_close").click(function(){
 
+
+$('#remove_modal1').modal('show')
+var cu = $('#subname1').text() + "?"
+
+ $('#modal_un_remove1').text(cu)
+ })
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+
+$(document).on("click", "#removal1", function(event){
+           $('.modal-backdrop').css('background', 'transparent')
        $('#loader-wrapper').css('visibility','unset');
         $('#loader-wrapper').css('z-index','9999');
         $('#loader-wrapper').css('opacity','1');
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
+      $('#loader').css('opacity','1');
 
+var search_artist2  = $('#subname2').text()
+var search_artist3  = $('#subname3').text()
+var search_artist4  = $('#subname4').text()
+
+window.location.href = "/viewer3/?search_artist=" + search_artist2 + "&search_artist2=" + search_artist3 + "&search_artist3=" + search_artist4+  "#access_token=" + a_t
+
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$("#artist2_close").click(function(){
+
+
+$('#remove_modal2').modal('show')
+var cu = $('#subname2').text() + "?"
+
+ $('#modal_un_remove2').text(cu)
+ })
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+
+$(document).on("click", "#removal2", function(event){
+           $('.modal-backdrop').css('background', 'transparent')
+         $('#loader-wrapper').css('visibility','unset');
+        $('#loader-wrapper').css('z-index','9999');
+        $('#loader-wrapper').css('opacity','1');
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
+      $('#loader').css('opacity','1');
+
+var search_artist1  = $('#subname1').text()
+var search_artist3  = $('#subname3').text()
+var search_artist4  = $('#subname4').text()
+
+
+window.location.href = "/viewer3/?search_artist=" + search_artist1 + "&search_artist2=" + search_artist3 + "&search_artist3=" + search_artist4+ "#access_token=" + a_t
+
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$("#artist3_close").click(function(){
+
+
+$('#remove_modal3').modal('show')
+var cu = $('#subname3').text() + "?"
+
+ $('#modal_un_remove3').text(cu)
+ })
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+
+$(document).on("click", "#removal3", function(event){
+           $('.modal-backdrop').css('background', 'transparent')
+   $('#loader-wrapper').css('visibility','unset');
+        $('#loader-wrapper').css('z-index','9999');
+        $('#loader-wrapper').css('opacity','1');
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
+      $('#loader').css('opacity','1');
+
+var search_artist1  = $('#subname1').text()
+var search_artist2  = $('#subname2').text()
+var search_artist4  = $('#subname4').text()
+
+window.location.href = "/viewer3/?search_artist=" + search_artist1 + "&search_artist2=" + search_artist2 + "&search_artist3=" + search_artist4+ "#access_token=" + a_t
+
+
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+
+$("#artist4_close").click(function(){
+
+
+$('#remove_modal4').modal('show')
+var cu = $('#subname4').text() + "?"
+
+ $('#modal_un_remove4').text(cu)
+ })
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+
+$(document).on("click", "#removal4", function(event){
+           $('.modal-backdrop').css('background', 'transparent')
+         $('#loader-wrapper').css('visibility','unset');
+        $('#loader-wrapper').css('z-index','9999');
+        $('#loader-wrapper').css('opacity','1');
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
+      $('#loader').css('opacity','1');
+
+var search_artist1  = $('#subname1').text()
+var search_artist2  = $('#subname2').text()
+var search_artist3  = $('#subname3').text()
+
+
+window.location.href = "/viewer3/?search_artist=" + search_artist1 + "&search_artist2=" + search_artist2 + "&search_artist3=" + search_artist3 + "#access_token=" + a_t
+
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+$("#artist1_close_ham").click(function(){
+
+       $('#loader-wrapper').css('visibility','unset');
+        $('#loader-wrapper').css('z-index','9999');
+        $('#loader-wrapper').css('opacity','1');
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
       $('#loader').css('opacity','1');
 
 var search_artist2  = $('#subname2').text()
@@ -239,11 +478,12 @@ window.location.href = "/viewer3/?search_artist=" + search_artist2 + "&search_ar
 
 <script>
 
-$("#artist2_close").click(function(){
+$("#artist2_close_ham").click(function(){
          $('#loader-wrapper').css('visibility','unset');
         $('#loader-wrapper').css('z-index','9999');
         $('#loader-wrapper').css('opacity','1');
-
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
       $('#loader').css('opacity','1');
 
 var search_artist1  = $('#subname1').text()
@@ -263,11 +503,12 @@ window.location.href = "/viewer3/?search_artist=" + search_artist1 + "&search_ar
 
 <script>
 
-$("#artist3_close").click(function(){
+$("#artist3_close_ham").click(function(){
          $('#loader-wrapper').css('visibility','unset');
         $('#loader-wrapper').css('z-index','9999');
         $('#loader-wrapper').css('opacity','1');
-
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
       $('#loader').css('opacity','1');
 
 var search_artist1  = $('#subname1').text()
@@ -286,11 +527,12 @@ window.location.href = "/viewer3/?search_artist=" + search_artist1 + "&search_ar
 
 <script>
 
-$("#artist4_close").click(function(){
+$("#artist4_close_ham").click(function(){
          $('#loader-wrapper').css('visibility','unset');
         $('#loader-wrapper').css('z-index','9999');
         $('#loader-wrapper').css('opacity','1');
-
+        $('#loader-wrapper').css('display','flex');
+        $('.whole_page').css('display','none');
       $('#loader').css('opacity','1');
 
 var search_artist1  = $('#subname1').text()
@@ -2136,6 +2378,157 @@ window.location.href = "https://accounts.spotify.com/authorize?client_id=efbd704
       </div>
     </div>
   </div>
+
+
+
+
+
+
+    <div class="modal fade" id="remove_modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_happy_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+                <div class='modal_text small_modal un'>remove</div>
+                <div id='modal_un_remove1' class='modal_text small_modal un larger_modal'></div>
+
+
+
+
+
+
+      </div>
+
+
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+<button type='button' id='removal1' class="spotify_color un_modal removal">remove</button></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <div class="modal fade" id="remove_modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_happy_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+                <div class='modal_text small_modal un'>remove</div>
+                <div id='modal_un_remove2' class='modal_text small_modal un larger_modal'></div>
+
+
+
+
+
+
+      </div>
+
+
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+<button type='button' id='removal2' class="spotify_color un_modal removal">remove</button></div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <div class="modal fade" id="remove_modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_happy_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+                <div class='modal_text small_modal un'>remove</div>
+                <div id='modal_un_remove3' class='modal_text small_modal un larger_modal'></div>
+
+
+
+
+
+
+      </div>
+
+
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+<button type='button' id='removal3' class="spotify_color un_modal removal">remove</button></div>
+      </div>
+    </div>
+  </div>
+
+
+        <div class="modal fade" id="remove_modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_happy_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+                <div class='modal_text small_modal un'>remove</div>
+                <div id='modal_un_remove4' class='modal_text small_modal un larger_modal'></div>
+
+
+
+
+
+
+      </div>
+
+
+        <div class='modal_bottom_flex'><div class='modal_spacer'></div>
+<button type='button' id='removal4' class="spotify_color un_modal removal">remove</button></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="fail_search_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal_bg">
+
+      <div class="modal-body ">
+        <div class='modal_top_flex'> <div class='modal_spacer'></div>       <button type="button" class="close modal_x" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+
+               <div class='modal_text small_modal un larger_modal'>{% if fail_search_term %}
+
+{{fail_search_term}}
+
+
+{% endif %}</div>
+               <div class='modal_text small_modal un fail_modal'>could not be found. Please search another term.</div>
+
+
+
+
+
+      </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
 </div>
 
 </div>
@@ -2173,5 +2566,11 @@ $('#search_viewer').submit(function() {
 			  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% if fail_search_term %}
+<script>
+$('#fail_search_modal').modal('show')
+
+</script>
+{% endif %}
 </html>
 
